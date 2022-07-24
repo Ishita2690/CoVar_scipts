@@ -94,47 +94,46 @@ for($l=1;$l<=$#st1;$l++){
 
 		
 
-
-    $m=0;
-    while($m<=$#pdba)
-    {
+$m=0;
+while($m<=$#pdba)
+{
      chomp $pdba[$m];
      @xx=split(/\s+/,$pdba[$m]);
      $x1=@xx[6];$y1=@xx[7];$z1=@xx[8];
      $n=0;
-     	while($n<=$#pdbb)
-     	{
-      	chomp $pdbb[$n];
-      	@yy=split(/\s+/,$pdbb[$n]);
-      	$x2=@yy[6];$y2=@yy[7];$z2=@yy[8];
-      	$x=($x1-$x2)**2;
-      	$y=($y1-$y2)**2;
-      	$z=($z1-$z2)**2;
-      	$distance=sprintf("%0.2f",((sqrt($x+$y+$z))));
-       	push(@diste,"$distance");
-       	undef @yy;
-        $n++;
-     }
+     while($n<=$#pdbb)
+	     {
+     		chomp $pdbb[$n];
+     		@yy=split(/\s+/,$pdbb[$n]);
+     		$x2=@yy[6];$y2=@yy[7];$z2=@yy[8];
+     		$x=($x1-$x2)**2;
+     		$y=($y1-$y2)**2;
+     		$z=($z1-$z2)**2;
+     		$distance=sprintf("%0.2f",((sqrt($x+$y+$z))));
+     		push(@diste,"$distance");
+     		undef @yy;
+     		$n++;
+     		}
      undef @xx;
      $m++;
-  }
+}
 
 
 	
-	$mind= min @diste;
-	$MinD{$pos[0]}{$pos[1]}="$mind";
-	$dog{$pos[0]}{$pos[1]}="$bos[1]";
-	$cos{$pos[0]}{$pos[1]}="$bos[2]";
-	$zs{$pos[0]}{$pos[1]}="$bos[3]";
-	$Sres{$pos[0]}{$pos[1]}="$bos[5]";
-	keys %MinD;
-	keys %cos;
-	keys %zs;
-	keys %dog;
-	keys %Sres;
-	undef @pdba;
-	undef @pdbb;
-	undef @diste;
+$mind= min @diste;
+$MinD{$pos[0]}{$pos[1]}="$mind";
+$dog{$pos[0]}{$pos[1]}="$bos[1]";
+$cos{$pos[0]}{$pos[1]}="$bos[2]";
+$zs{$pos[0]}{$pos[1]}="$bos[3]";
+$Sres{$pos[0]}{$pos[1]}="$bos[5]";
+keys %MinD;
+keys %cos;
+keys %zs;
+keys %dog;
+keys %Sres;
+undef @pdba;
+undef @pdbb;
+undef @diste;
 }
 
 
