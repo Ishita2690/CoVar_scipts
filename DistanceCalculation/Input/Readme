@@ -1,1 +1,9 @@
+##Parameters required for run
+
+perl DistanceCalculation.pl <Structure mapped co-evolved position file> <PDB structure file> sequenceA=chain sequenceB=B 8
+
+where, sequenceA is first reference sequence as mentioned in header and sequenceB is second reference sequence from protein family B. For input file format please refer to the example file provided.
+
+For eg:
+perl DistanceCalculation.pl example/interproteinA-Srt-Strucmapped-coevoscores-FiveZ-1 example/IPPeg.pdb interproteinA=A interproteinB=B 8
 
